@@ -1,0 +1,40 @@
+<!-- booking-form.component.html -->
+
+<div class="bookingticket">
+  <div class="container">
+    <h2>Booking Details</h2>
+    <form class="mb-4" (submit)="bookTicket()">
+      <div class="form-group">
+        <label for="bookingDate">Travel Date</label>
+        <input type="text" class="form-control" id="bookingDate" name="bookingDate" [(ngModel)]="bookingDate">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required [(ngModel)]="email">
+      </div>
+
+      <div class="form-group">
+        <label for="amount">Total Amount</label>
+        <input type="number" class="form-control" id="amount" name="amount" [(ngModel)]="amount">
+      </div>
+      <div class="form-group">
+        <label for="seatNo">Seat No</label>
+        <input type="text" class="form-control" id="seatNo" name="seatNo" [(ngModel)]="selectedSeats">
+      </div>
+
+      <div class="form-group">
+        <label for="totalCustomer">Number of Passengers</label>
+        <input type="number" class="form-control" id="totalCustomer" name="totalCustomer" [(ngModel)]="totalCustomer">
+      </div>
+
+      <button type="submit" class="btn btn-dark">Book a Ticket</button>
+      <!-- <button type="button" style="margin-left: 300px;" class="btn btn-dark" (click)="back()">Back</button> -->
+    </form>
+
+    
+  </div>
+</div>
+
+
+<!-- Show Passengers -->

@@ -1,0 +1,21 @@
+<div class="background-image-container">
+  <img src="../../assets/user sign up.jpg" class="background-image">
+  <div class="form-container">
+    <form   #formData=ngForm  (ngSubmit)="readFormData(formData)" >
+        <div class="form-group">
+          <label for="exampleInputEmail1">UserName</label>
+          <input type="username" class="form-control" name="username"  required  #username="ngModel"  ngModel       >
+          <small id="userHelp" class="form-text text-muted">We'll never share your user details with anyone else.</small><br>
+          <span style="color:red"  *ngIf="username.touched && username.invalid" >UserName is required</span>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control"  name="password"  required  #pwd="ngModel"   ngModel>
+          <span style="color:red"   *ngIf="pwd.touched && pwd.invalid" >Password is mandartory</span>
+        </div>
+       
+        <button type="submit" class="btn btn-primary" [disabled]="formData.invalid"  >Submit</button>
+      </form>
+    </div>
+  </div>
+  

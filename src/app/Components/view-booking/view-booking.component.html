@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Details</title>
+</head>
+<body>
+  <div class="ticketContainer">
+    <h1>Ticket Details</h1>
+    <div class="ti" id="ticketPdf">
+      <table class="topBar">
+        <tr>
+          <th>Source</th>
+          <td>{{bus.sourceCity}}</td>
+          <th>Destination</th>
+          <td>{{bus.destinationCity}}</td>
+        </tr>
+        <tr>
+          <th>Travel Date</th>
+          <td>{{booking.bookingDate}}</td>
+          <th>Booking Id</th>
+          <td>{{booking.bookingId}}</td>
+        </tr>
+        <tr>
+          <th>Seat No</th>
+          <td>{{booking.seatNo}}</td>
+          <th>Name</th>
+          <td>{{user.firstName}} {{user.lastName}}</td>
+        </tr>
+      </table>
+      <div class="flightInfoBar">
+        <table>
+          <tr>
+            <th>Bus Id</th>
+            <td>{{bus.busId}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="jouneyInfoBar">
+        <table>
+          <tr> 
+            <th>Arrival Time</th>
+            <td>{{bus.departureTime}}</td>
+            <th>Total Fare</th>
+            <td>Rs {{ amount }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<div class="main">
+    <div class="container" style="background-color: rgba(37, 97, 0, 0.34);">
+      <div class="container">
+        <table class="table table-striped table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">SNO.</th>
+              <th scope="col">Operator ID</th>
+              <th scope="col">Operator Name</th>
+              <th scope="col">Contact Phone</th>
+             
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="operatorList.length === 0; else operatorData">
+              <td colspan="6" class="text-center">No operators available.</td>
+            </tr>
+            <ng-template #operatorData>
+              <tr *ngFor="let operator of operatorList; index as i">
+                <td>{{ i + 1 }}</td>
+                <td>{{ operator.operatorId }}</td>
+                <td>{{ operator.operatorName }}</td>
+                <td>{{ operator.contactPhone }}</td>
+               
+                <td>
+                  <button type="button" class="btn btn-danger" (click)="deleteOperator(operator.operatorId)">Delete</button>
+                </td>
+              </tr>
+            </ng-template>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

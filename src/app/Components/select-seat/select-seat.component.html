@@ -1,0 +1,16 @@
+<div class="body">
+
+    <div id="seat-container">
+      <table>
+        <tr *ngFor="let row of seats; let i = index">
+          <td *ngFor="let seat of row" [ngClass]="{'occupied': bookedSeats.includes(seat) || selectedSeatsList.has(seat)}" (click)="selectSeat(seat)">
+            <input type="image" src="../../../assets/seat.jpg" />
+          </td>
+        </tr>
+      </table>
+      <br>
+    </div>
+    <button style="margin-left: 360px;"class="button" [disabled]="selectedSeatCount === 0" (click)="sendDataOfSeats()">Proceed</button>
+   
+</div>
+
